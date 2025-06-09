@@ -60,7 +60,7 @@ def median_kernel(filter_width: int):
         tl.store(y_ptr + offsets, MIDDLE_ROW_HERE, mask=mask)  # noqa: F821
 
     kernel = triton.JITFunction(kernel.fn)
-    src = kernal.src
+    src = kernel.src
     
     src = src.replace(
         "    LOAD_ALL_ROWS_HERE",
